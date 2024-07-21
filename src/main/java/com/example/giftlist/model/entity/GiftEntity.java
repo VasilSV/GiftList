@@ -1,5 +1,6 @@
 package com.example.giftlist.model.entity;
 
+import com.example.giftlist.model.enums.GiftTypeEntity;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;
@@ -17,6 +18,10 @@ public class GiftEntity {
     private String description;
     @Column(nullable = false)
     private BigDecimal price;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private GiftTypeEntity giftTypeEntity;
 
 
 }

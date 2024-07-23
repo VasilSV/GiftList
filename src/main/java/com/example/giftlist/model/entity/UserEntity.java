@@ -26,5 +26,6 @@ public class UserEntity {
     private UserTypeEntity userTypeEntity;
 
 
-
+    public UserEntity() {
+    }
 }

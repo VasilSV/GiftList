@@ -23,8 +23,16 @@ dependencies {
     implementation 'javax.validation:validation-api:2.0.1.Final'
     // https://mvnrepository.com/artifact/org.modelmapper/modelmapper
     implementation 'org.modelmapper:modelmapper:3.1.1'
+    implementation 'mysql:mysql-connector-java:8.0.28' // добавете това
 }
+//
+//tasks.named('test') {
+//    useJUnitPlatform()
+//}
+task copyFrontend(type: Copy) {
+    from '../frontend/build'
+    into 'src/main/resources/static'
 
-tasks.named('test') {
-    useJUnitPlatform()
+
+    build.dependsOn(copyFrontend)
 }

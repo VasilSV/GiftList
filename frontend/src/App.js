@@ -24,31 +24,45 @@
 //
 // export default App;
 // frontend/src/App.js
-import React, { useEffect, useState } from 'react';
-import { getAllUsers } from './Api';
+// import React, { useEffect, useState } from 'react';
+// import { getAllUsers } from './Api';
+//
+// const App = () => {
+//   const [users, setUsers] = useState([]);
+//
+//   useEffect(() => {
+//     getAllUsers().then(response => {
+//       setUsers(response.data);
+//     });
+//   }, []);
+//
+//   return (
+//
+//       <div>
+//
+//         <h1>Users</h1>
+//         <ul>
+//           {users.map(user => (
+//               <li key={user.name}>{user.name} {user.surname}</li>
+//           ))}
+//         </ul>
+//       </div>
+//
+//   );
+// }
+//
+//
+// export default App;
+import React from 'react';
+import RegisterForm from './RegisterForm';
 
-const App = () => {
-  const [users, setUsers] = useState([]);
-
-  useEffect(() => {
-    getAllUsers().then(response => {
-      setUsers(response.data);
-    });
-  }, []);
-
-  return (
-
-      <div>
-
-        <h1>Users</h1>
-        <ul>
-          {users.map(user => (
-              <li key={user.name}>{user.name} {user.surname}</li>
-          ))}
-        </ul>
-      </div>
-
-  );
+function App() {
+    return (
+        <div>
+            <h1>Registration Page</h1>
+            <RegisterForm />
+        </div>
+    );
 }
 
 export default App;

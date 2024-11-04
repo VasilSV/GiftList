@@ -1,0 +1,40 @@
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:replace="~{fragments/head :: head}"></head>
+
+
+<body>
+
+<div th:replace="~{fragments/navbar :: navbar}">
+  Navbar
+</div>
+
+<div class="container">
+  <h2 class="text-center text-white">Welcome to home page
+    <th:block sec:authorize="isAuthenticated()">
+      <th:block sec:authentication="name"></th:block>
+    </th:block>
+    <th:block sec:authorize="!isAuthenticated()">
+      <div class="col-md-6 ">
+        <img class="rounded" width="210%" src="/images/gradinaProlet.jpg" alt="Tools image">
+      </div>
+    </th:block>
+  </h2>
+  <h3 sec:authorize="!isAuthenticated()">
+    <a class="text-primary" th:href="@{users/login}">Login</a>
+    if you have an account or
+    <a class="text-primary" th:href="@{users/register}">Register</a>
+    now and check our deals.
+  </h3>
+
+</div>
+<div>
+
+</div>
+
+<div>
+  <footer></footer>
+</div>
+</body>
+</html>

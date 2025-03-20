@@ -23,5 +23,6 @@ public class GiftEntity {
     @Column(nullable = false)
     private GiftTypeEntity giftTypeEntity;
 
-
+    public GiftEntity() {
+    }
 }

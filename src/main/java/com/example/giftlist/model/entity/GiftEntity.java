@@ -25,4 +25,8 @@ public class GiftEntity {
 
     public GiftEntity() {
     }
+
+    public Long getId() {
+        return id;
+    }
 }
